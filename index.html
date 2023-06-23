@@ -1,0 +1,55 @@
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="./shoot.js"></script>
+  <script src="./enemy.js"></script>
+
+</head>
+
+<body>
+<a-scene id="scene" inspector-plugin-recast>
+    <a-assets>
+        <a-asset-item id="a" src="./assets/Copy of Fallen Kingdom gaurd.glb"></a-asset-items>
+        <a-asset-item id="wall" src="./assets/Ingenious Jaban.glb"></a-asset-item>
+        <a-asset-item id="gun" src="./assets/Copy of GUN GUN GUN GUN GUN GUN!!.glb"></a-asset-item>
+        <a-asset-item id="monster" src="./assets/Copy of chicken security gaurd.glb"></a-asset-item>
+    </a-assets>
+
+    <a-entity id="environment" environment="preset:dream;skyType:gradient;lighting:point"></a-entity>
+
+    <a-entity light="type:ambient; color:white; intensify:0.5"></a-entity>
+    <a-entity light="type:directonal;color:#EEE;intensify:1" position="-1 1 0"></a-entity>
+
+
+
+  <!--  <a-entity id="camera-rig" movement-controls="speed: 0.2; constraintToNavMesh:true" position="0 1 2">
+    <a-entity id="camera" camera position="0 1.6 0" look-controls="pointerLockEnabled: true"> 
+    <a-entity id="weapon" gltf-model="#gun" position="1 -1 0" rotation="0 180 0" scale="0.01 0.01 0.01" body="type:static;mass:5;shape:none;" shape="shape:sphere; radius:5; offset:0 0 0;"></a-entity>
+    </a-entity>
+    </a-entity> -->
+
+
+    <a-entity bullets></a-entity>
+    <a-entity enemy-fireballs></a-entity>
+
+
+    <a-entity class="enemy" id="enemy1" gltf-model="#monster" position="-10 0 -20" scale=".025 .025 .025"
+    body="type: static; mass: 5; shape: none;" 
+    shape="shape: sphere; radius: 40; offset: 0 100 -80;"
+    >
+  </a-entity>
+
+
+
+  <a-entity class="wall" id="wall1" gltf-model="#wall" position="0 1 -10" scale=".025 .025 .025"
+    >
+  </a-entity>
+
+</a-scene>
+
+
+</body>
